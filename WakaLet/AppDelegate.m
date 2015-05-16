@@ -170,7 +170,7 @@
         NSString* date = [rangeObj valueForKey:@"date"];
         NSString* date_human = [rangeObj valueForKey:@"date_human"];
         NSString* grand_total_text = [grandObj valueForKey:@"text"];
-        NSString* menuTitle = [NSString stringWithFormat:@"%@ - %@", date_human, grand_total_text];
+        NSString* menuTitle = [NSString stringWithFormat:@"%@ - %@", date_human.capitalizedString, grand_total_text];
         
         // Each item is clickable, we store the url to the date in it's tooltip
         NSMenuItem *dateItem = [[NSMenuItem alloc] initWithTitle:menuTitle
