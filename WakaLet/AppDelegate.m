@@ -169,9 +169,10 @@
         NSDictionary *rangeObj = [dataObj objectForKey:@"range"];
         NSString* date = [rangeObj valueForKey:@"date"];
         NSString* date_human = [rangeObj valueForKey:@"date_human"];
+        NSString* menuTitle = [NSString stringWithFormat:@"%@ - %@", date_human, [grandObj valueForKey:@"text"]];
         
         // Each item is clickable, we store the url to the date in it's tooltip
-        NSMenuItem *dateItem = [[NSMenuItem alloc] initWithTitle:date_human.capitalizedString
+        NSMenuItem *dateItem = [[NSMenuItem alloc] initWithTitle:menuTitle
                                                           action:@selector(open:)
                                                    keyEquivalent:@""];
         dateItem.toolTip = [NSString stringWithFormat:@"https://wakatime.com/dashboard/day?date=%@",date];
